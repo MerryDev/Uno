@@ -5,7 +5,7 @@ import lombok.Getter;
 import java.awt.*;
 
 /**
- * @author MerryChrismas
+ * @author Sven
  * @author <a href='https://digitaldevs.de'>DigitalDevs.de</a>
  * @version 1.0.0
  */
