@@ -1,3 +1,3 @@
- Uno.iml
- .idea
- target
+/target
+Uno.iml
+/.idea
