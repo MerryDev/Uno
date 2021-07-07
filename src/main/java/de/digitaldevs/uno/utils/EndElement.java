@@ -1,7 +1,7 @@
 package de.digitaldevs.uno.utils;
 
 /**
- * @author MerryChrismas
+ * @author Sven
  * @author <a href='https://digitaldevs.de'>DigitalDevs.de</a>
  * @version 1.0.0
  */

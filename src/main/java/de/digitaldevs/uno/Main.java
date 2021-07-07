@@ -33,7 +33,7 @@ public class Main {
         cards.push(card2);
         cards.push(card3);
 
-        cards.getContent().forEach(wrapper -> System.out.println(wrapper.getData().getNumber() +  " --> " + wrapper.getNext()));
+        cards.getContent().forEach(wrapper -> System.out.println(wrapper.getData().number() +  " --> " + wrapper.getNext()));
     }
 
 }

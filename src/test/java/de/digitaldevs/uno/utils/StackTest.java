@@ -5,11 +5,11 @@ import de.digitaldevs.uno.game.engine.Card;
 import java.awt.*;
 
 /**
- * @author MerryChrismas
+ * @author Sven
  * @author <a href='https://digitaldevs.de'>DigitalDevs.de</a>
  * @version 1.0.0
  */
-public class StackTest  {
+public class StackTest {
 
     private static Stack<Card> cards;
 
@@ -18,15 +18,9 @@ public class StackTest  {
         createYellowCards();
 
         cards.getContent().forEach(cardElementWrapper -> {
-            if(!(cardElementWrapper.getNext() instanceof EndElement)) System.out.println(cardElementWrapper.getData().getNumber() + " --> " + cardElementWrapper.getNext().getData().getNumber());
-            else System.out.println(cardElementWrapper.getData().getNumber() + " --> Ende");
-        });
-
-        cards.shuffle();
-
-        cards.getContent().forEach(cardElementWrapper -> {
-            if(!(cardElementWrapper.getNext() instanceof EndElement)) System.out.println(cardElementWrapper.getData().getNumber() + " --> " + cardElementWrapper.getNext().getData().getNumber());
-            else System.out.println(cardElementWrapper.getData().getNumber() + " --> Ende");
+            if (!(cardElementWrapper.getNext() instanceof EndElement))
+                System.out.println(cardElementWrapper.getData().number() + " --> " + cardElementWrapper.getNext().getData().number());
+            else System.out.println(cardElementWrapper.getData().number() + " --> Ende");
         });
 
     }
