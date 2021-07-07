@@ -105,4 +105,8 @@ public class Stack<E> {
         return this.content.isEmpty();
     }
 
+    public int a() {
+        return -1;
+    }
+
 }
