@@ -1,45 +1,28 @@
 package de.digitaldevs.uno.utils;
 
-import de.digitaldevs.uno.game.engine.Card;
+import de.digitaldevs.uno.game.cards.Card;
+import de.digitaldevs.uno.game.cards.NumericCard;
+import junit.framework.TestCase;
 
 import java.awt.*;
 
-/**
- * @author Sven
- * @author <a href='https://digitaldevs.de'>DigitalDevs.de</a>
- * @version 1.0.0
- */
-public class StackTest {
-
-    private static Stack<Card> cards;
+public class StackTest extends TestCase {
 
     public static void main(String[] args) {
-        cards = new Stack<>();
-        createYellowCards();
+        Stack<Card> cards = new Stack<>();
+
+        ElementWrapper<Card> wrapper = new ElementWrapper<>();
+        wrapper.setData(new NumericCard(1, Color.YELLOW));
+
+        cards.push(wrapper);
 
         cards.getContent().forEach(cardElementWrapper -> {
-            if (!(cardElementWrapper.getNext() instanceof EndElement))
-                System.out.println(cardElementWrapper.getData().number() + " --> " + cardElementWrapper.getNext().getData().number());
-            else System.out.println(cardElementWrapper.getData().number() + " --> Ende");
+            Card card = cardElementWrapper.getData();
+            if(card instanceof NumericCard numericCard) {
+                System.out.println(numericCard.number() + " --> " + numericCard.color());
+            }
         });
-
     }
 
-    private static void createYellowCards() {
-
-        ElementWrapper<Card> card1 = new ElementWrapper<>();
-        card1.setData(new Card(1, Color.YELLOW));
-
-        ElementWrapper<Card> card2 = new ElementWrapper<>();
-        card2.setData(new Card(2, Color.GREEN));
-
-        ElementWrapper<Card> card3 = new ElementWrapper<>();
-        card3.setData(new Card(3, Color.BLUE));
-
-        cards.push(card1);
-        cards.push(card2);
-        cards.push(card3);
-
-    }
 
 }
