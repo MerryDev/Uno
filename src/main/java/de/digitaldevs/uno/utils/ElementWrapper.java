@@ -8,11 +8,16 @@ import lombok.Setter;
  *
  * @author Sven
  * @author <a href='https://digitaldevs.de'>DigitalDevs.de</a>
- * @version 1.0.0
+ * @version 1.0.1
  */
 public class ElementWrapper<E> {
 
-    @Getter @Setter private E data;
+    @Getter private E data;
     @Getter @Setter private ElementWrapper<E> next;
+
+    public ElementWrapper<E> setData(E data) {
+        this.data = data;
+        return this;
+    }
 
 }
