@@ -1,20 +1,17 @@
 package de.digitaldevs.uno.utils;
 
-import de.digitaldevs.uno.game.cards.Card;
-import de.digitaldevs.uno.game.cards.NumericCard;
+import de.digitaldevs.uno.game.engine.cards.Card;
+import de.digitaldevs.uno.game.engine.cards.NumericCard;
 import junit.framework.TestCase;
 
 import java.awt.*;
 
 public class StackTest extends TestCase {
 
-    public static void main(String[] args) {
+    public void testStack() {
         Stack<Card> cards = new Stack<>();
 
-        ElementWrapper<Card> wrapper = new ElementWrapper<>();
-        wrapper.setData(new NumericCard(1, Color.YELLOW));
-
-        cards.push(wrapper);
+        cards.push(new ElementWrapper<Card>().setData(new NumericCard(1, Color.YELLOW)));
 
         cards.getContent().forEach(cardElementWrapper -> {
             Card card = cardElementWrapper.getData();
