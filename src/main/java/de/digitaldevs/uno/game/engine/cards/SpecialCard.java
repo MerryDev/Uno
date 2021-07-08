@@ -1,4 +1,4 @@
-package de.digitaldevs.uno.game.cards;
+package de.digitaldevs.uno.game.engine.cards;
 
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;

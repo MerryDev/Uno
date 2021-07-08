@@ -1,4 +1,4 @@
-package de.digitaldevs.uno.game.cards;
+package de.digitaldevs.uno.game.engine.cards;
 
 public enum SpecialCardType {
 
