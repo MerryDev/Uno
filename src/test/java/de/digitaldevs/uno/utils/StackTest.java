@@ -13,12 +13,7 @@ public class StackTest extends TestCase {
 
         cards.push(new ElementWrapper<Card>().setData(new NumericCard(1, Color.YELLOW)));
 
-        cards.getContent().forEach(cardElementWrapper -> {
-            Card card = cardElementWrapper.getData();
-            if(card instanceof NumericCard numericCard) {
-                System.out.println(numericCard.number() + " --> " + numericCard.color());
-            }
-        });
+
     }
 
 
