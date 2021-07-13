@@ -106,38 +106,32 @@ public class Uno_PlayerSelectionGUI extends JFrame {
   
   public static void main(String[] args) {
     new Uno_PlayerSelectionGUI();
-  } // end of main
+  }
   
   public void pBot1Button_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einf?gen
-    
-  } // end of pBot1Button_ActionPerformed
+
+  }
 
   public void bBot2_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einf?gen
     
-  } // end of bBot2_ActionPerformed
+  }
 
   public void bBot3_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einf?gen
     
-  } // end of bBot3_ActionPerformed
+  }
 
   public void bBot4_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einf?gen
-    
-  } // end of bBot4_ActionPerformed
+
+  }
 
   public void bOk_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einf?gen
     
-  } // end of bOk_ActionPerformed
+  }
 
   public void bCancel_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einf?gen
+    this.setVisible(false);
     
-  } // end of bCancel_ActionPerformed
+  }
 
-  // Ende Methoden
 } // end of class Uno_PlayerSelectionGUI
 
