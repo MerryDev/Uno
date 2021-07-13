@@ -12,8 +12,21 @@ import lombok.Setter;
  */
 public class ElementWrapper<E> {
 
-    @Getter private E data;
-    @Getter @Setter private ElementWrapper<E> next;
+    private E data;
+    private ElementWrapper<E> next;
+
+    public E getData() {
+        return data;
+    }
+
+    public ElementWrapper<E> getNext() {
+        return next;
+    }
+
+    public ElementWrapper<E> setNext(ElementWrapper<E> next) {
+        this.next = next;
+        return this;
+    }
 
     public ElementWrapper<E> setData(E data) {
         this.data = data;
