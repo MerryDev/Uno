@@ -27,25 +27,30 @@ public class Uno_ArenaGUI extends JFrame {
     setResizable(false);
     Container cp = getContentPane();
     cp.setLayout(null);
-    // Anfang Komponenten
 
-    // Anfang Attribute
+
+    //Displays player names
     JLabel player1Text = new JLabel();
     player1Text.setBounds(374, 482, 110, 20);
     player1Text.setText("");
     cp.add(player1Text);
+
     JLabel player2Text = new JLabel();
     player2Text.setBounds(8, 203, 110, 20);
     player2Text.setText("");
     cp.add(player2Text);
+
     JLabel player3Text = new JLabel();
     player3Text.setBounds(375, 14, 110, 20);
     player3Text.setText("");
     cp.add(player3Text);
+
     JLabel player4Text = new JLabel();
     player4Text.setBounds(745, 202, 110, 20);
     player4Text.setText("");
     cp.add(player4Text);
+
+    //Displays last played card
     JLabel cardStackMid = new JLabel();
     cardStackMid.setBounds(414, 199, 90, 90);
     cardStackMid.setText("");
@@ -56,12 +61,12 @@ public class Uno_ArenaGUI extends JFrame {
     setVisible(true);
   } // end of public Uno_ArenaGUI
   
-  // Anfang Methoden
+
   
   public static void main(String[] args) {
     new Uno_ArenaGUI();
   } // end of main
   
-  // Ende Methoden
+
 } // end of class Uno_ArenaGUI
 

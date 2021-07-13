@@ -31,69 +31,97 @@ public class Uno_PlayerSelectionGUI extends JFrame {
     cp.setLayout(null);
 
     // Components
-
+    //Header above the text field
     JLabel player1SelectText = new JLabel();
     player1SelectText.setBounds(8, 48, 110, 20);
     player1SelectText.setText("Player 1");
     cp.add(player1SelectText);
+
+    //Header above the text field
     JLabel player2SelectText = new JLabel();
     player2SelectText.setBounds(8, 112, 110, 20);
     player2SelectText.setText("Player 2");
     cp.add(player2SelectText);
+
+    //Header above the text field
     JLabel player3SelectText = new JLabel();
     player3SelectText.setBounds(8, 200, 110, 20);
     player3SelectText.setText("Player 3");
     cp.add(player3SelectText);
+
+    //Header above the text field
     JLabel player4SelectText = new JLabel();
     player4SelectText.setBounds(16, 312, 110, 20);
     player4SelectText.setText("Player 4");
     cp.add(player4SelectText);
+
+    //Text field to choose the first player's name
     JTextField player1SelectTextField = new JTextField();
     player1SelectTextField.setBounds(8, 72, 150, 20);
     cp.add(player1SelectTextField);
+
+    //Text field to choose the second player's name
     JTextField player2SelectTextField = new JTextField();
     player2SelectTextField.setBounds(8, 136, 150, 20);
     cp.add(player2SelectTextField);
+
+    //Text field to choose the third player's name
     JTextField player3SelectTextField = new JTextField();
     player3SelectTextField.setBounds(8, 224, 150, 20);
     cp.add(player3SelectTextField);
+
+    //Text field to choose the fourth player's name
     JTextField player4SelectTextField = new JTextField();
     player4SelectTextField.setBounds(8, 336, 150, 20);
     cp.add(player4SelectTextField);
-    JButton pBot1Button = new JButton();
-    pBot1Button.setBounds(187, 70, 75, 25);
-    pBot1Button.setText("Bot 1");
-    pBot1Button.setMargin(new Insets(2, 2, 2, 2));
-    pBot1Button.addActionListener(this::pBot1Button_ActionPerformed);
-    cp.add(pBot1Button);
+
+    //Player 1 becomes a bot
+    JButton bBot1Button = new JButton();
+    bBot1Button.setBounds(187, 70, 75, 25);
+    bBot1Button.setText("Bot 1");
+    bBot1Button.setMargin(new Insets(2, 2, 2, 2));
+    bBot1Button.addActionListener(this::pBot1Button_ActionPerformed);
+    cp.add(bBot1Button);
+
+    //Player 2 becomes a bot
     JButton bBot2 = new JButton();
     bBot2.setBounds(182, 132, 75, 25);
     bBot2.setText("Bot 2");
     bBot2.setMargin(new Insets(2, 2, 2, 2));
     bBot2.addActionListener(this::bBot2_ActionPerformed);
     cp.add(bBot2);
+
+    //Player 3 becomes a bot
     JButton bBot3 = new JButton();
     bBot3.setBounds(179, 219, 75, 25);
     bBot3.setText("Bot 3");
     bBot3.setMargin(new Insets(2, 2, 2, 2));
     bBot3.addActionListener(this::bBot3_ActionPerformed);
     cp.add(bBot3);
+
+    //Player 4 becomes a bot
     JButton bBot4 = new JButton();
     bBot4.setBounds(183, 333, 75, 25);
     bBot4.setText("Bot 4");
     bBot4.setMargin(new Insets(2, 2, 2, 2));
     bBot4.addActionListener(this::bBot4_ActionPerformed);
     cp.add(bBot4);
+
+    //This screen's header
     JLabel playerSelectionText = new JLabel();
     playerSelectionText.setBounds(17, 9, 110, 20);
     playerSelectionText.setText("Player Selection");
     cp.add(playerSelectionText);
+
+    //The button to confirm one's selection
     JButton bOk = new JButton();
     bOk.setBounds(277, 373, 75, 25);
     bOk.setText("Ok");
     bOk.setMargin(new Insets(2, 2, 2, 2));
     bOk.addActionListener(this::bOk_ActionPerformed);
     cp.add(bOk);
+
+    //The button to close this window
     JButton bCancel = new JButton();
     bCancel.setBounds(191, 375, 75, 25);
     bCancel.setText("Cancel");
@@ -138,6 +166,6 @@ public class Uno_PlayerSelectionGUI extends JFrame {
     
   } // end of bCancel_ActionPerformed
 
-  // Ende Methoden
+
 } // end of class Uno_PlayerSelectionGUI
 

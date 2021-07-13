@@ -31,6 +31,7 @@ public class Uno_StartGUI extends JFrame {
     cp.setLayout(null);
     // Anfang Komponenten
 
+    //Displays the game title on the main menu
     JLabel startUnoTitle = new JLabel();
     startUnoTitle.setBounds(85, 58, 120, 71);
     startUnoTitle.setText("UNO");
@@ -40,6 +41,8 @@ public class Uno_StartGUI extends JFrame {
     startUnoTitle.setForeground(Color.BLACK);
     startUnoTitle.setHorizontalAlignment(SwingConstants.CENTER);
     cp.add(startUnoTitle);
+
+    //This button opens the player selection menu
     JButton bNewgame = new JButton();
     bNewgame.setBounds(38, 191, 219, 81);
     bNewgame.setText("New game");
@@ -51,22 +54,22 @@ public class Uno_StartGUI extends JFrame {
     });
     bNewgame.setFont(new Font("Dialog", Font.BOLD, 30));
     cp.add(bNewgame);
-    // Ende Komponenten
+
     
     setVisible(true);
   } // end of public Uno_StartGUI
   
-  // Anfang Methoden
+
   
   public static void main(String[] args) {
     new Uno_StartGUI();
   } // end of main
   
   public void bNewgame_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einf�gen
+
     
   } // end of bNewgame_ActionPerformed
 
-  // Ende Methoden
+
 } // end of class Uno_StartGUI
 
