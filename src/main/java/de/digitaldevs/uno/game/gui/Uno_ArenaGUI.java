@@ -1,9 +1,7 @@
 package de.digitaldevs.uno.game.gui;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
+import java.awt.*;
 
 /**
  *
@@ -14,16 +12,8 @@ import javax.swing.event.*;
  */
 
 public class Uno_ArenaGUI extends JFrame {
-  // Anfang Attribute
-  private JLabel player1Text = new JLabel();
-  private JLabel player2Text = new JLabel();
-  private JLabel player3Text = new JLabel();
-  private JLabel player4Text = new JLabel();
-  private JLabel cardStackMid = new JLabel();
-  // Ende Attribute
-  
+
   public Uno_ArenaGUI() { 
-    // Frame-Initialisierung
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 900; 
@@ -38,19 +28,25 @@ public class Uno_ArenaGUI extends JFrame {
     Container cp = getContentPane();
     cp.setLayout(null);
     // Anfang Komponenten
-    
+
+    // Anfang Attribute
+    JLabel player1Text = new JLabel();
     player1Text.setBounds(374, 482, 110, 20);
     player1Text.setText("");
     cp.add(player1Text);
+    JLabel player2Text = new JLabel();
     player2Text.setBounds(8, 203, 110, 20);
     player2Text.setText("");
     cp.add(player2Text);
+    JLabel player3Text = new JLabel();
     player3Text.setBounds(375, 14, 110, 20);
     player3Text.setText("");
     cp.add(player3Text);
+    JLabel player4Text = new JLabel();
     player4Text.setBounds(745, 202, 110, 20);
     player4Text.setText("");
     cp.add(player4Text);
+    JLabel cardStackMid = new JLabel();
     cardStackMid.setBounds(414, 199, 90, 90);
     cardStackMid.setText("");
     cardStackMid.setFont(new Font("Dialog", Font.BOLD, 50));

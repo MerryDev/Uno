@@ -14,13 +14,8 @@ import javax.swing.event.*;
  */
 
 public class Uno_StartGUI extends JFrame {
-  // Anfang Attribute
-  private JLabel startUnoTitle = new JLabel();
-  private JButton bNewgame = new JButton();
-  // Ende Attribute
-  
-  public Uno_StartGUI() { 
-    // Frame-Initialisierung
+
+  public Uno_StartGUI() {
     super();
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     int frameWidth = 300; 
@@ -35,7 +30,8 @@ public class Uno_StartGUI extends JFrame {
     Container cp = getContentPane();
     cp.setLayout(null);
     // Anfang Komponenten
-    
+
+    JLabel startUnoTitle = new JLabel();
     startUnoTitle.setBounds(85, 58, 120, 71);
     startUnoTitle.setText("UNO");
     startUnoTitle.setBackground(Color.RED);
@@ -44,6 +40,7 @@ public class Uno_StartGUI extends JFrame {
     startUnoTitle.setForeground(Color.BLACK);
     startUnoTitle.setHorizontalAlignment(SwingConstants.CENTER);
     cp.add(startUnoTitle);
+    JButton bNewgame = new JButton();
     bNewgame.setBounds(38, 191, 219, 81);
     bNewgame.setText("New game");
     bNewgame.setMargin(new Insets(2, 2, 2, 2));
@@ -66,7 +63,7 @@ public class Uno_StartGUI extends JFrame {
   } // end of main
   
   public void bNewgame_ActionPerformed(ActionEvent evt) {
-    // TODO hier Quelltext einfügen
+    // TODO hier Quelltext einfï¿½gen
     
   } // end of bNewgame_ActionPerformed
 
