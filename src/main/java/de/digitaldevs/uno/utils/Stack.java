@@ -1,9 +1,7 @@
 package de.digitaldevs.uno.utils;
 
-import lombok.Getter;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * This class represents a generic stack data structure based on the composite design pattern.
@@ -15,12 +13,6 @@ import java.util.List;
 public class Stack<E> {
 
     /**
-     * The list holding all elements. Uses {@code @Getter} annotation from lombok framework to create a getter method during compiling.
-     */
-    @Getter
-    private final List<ElementWrapper<E>> content;
-
-    /**
      * The first element of the stack.
      */
     private ElementWrapper<E> first;
@@ -29,7 +21,6 @@ public class Stack<E> {
      * Instantiates a new empty stack and sets the first element to a {@code EndElement}.
      */
     public Stack() {
-        this.content = new ArrayList<>();
         this.first = new EndElement<>();
     }
 
@@ -43,7 +34,6 @@ public class Stack<E> {
         else wrapper.setNext(this.first);
 
         this.first = wrapper;
-        this.content.add(0, wrapper);
     }
 
     /**
@@ -54,8 +44,6 @@ public class Stack<E> {
     public ElementWrapper<E> pop() {
         ElementWrapper<E> currentFirst = this.first;
         this.first = currentFirst.getNext();
-        this.content.remove(0);
-
         return currentFirst;
     }
 
@@ -71,10 +59,11 @@ public class Stack<E> {
     /**
      * Shuffles the stack.
      *
-     * @throws UnsupportedOperationException if this method is called
+     * @throws UnsupportedOperationException If this method is called.
      */
-    public void shuffle() throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("This functionality is not supported yet!");
+    @Deprecated
+    public void shuffleCards() {
+        throw new UnsupportedOperationException("This functions is not supported yet!");
     }
 
     /**
@@ -82,18 +71,18 @@ public class Stack<E> {
      */
     public void clear() {
         this.first = new EndElement<>();
-        this.content.clear();
     }
 
     /**
-     * Gets the postion of a wrapped element in a stack.
+     * Gets the position of a wrapped element in a stack.
      *
      * @param target The wrapped element witch should be found
      * @return The position of the wrapped element in the stack or {@code -1} if the element was not found
+     * @throws UnsupportedOperationException If this method is called
      */
-    public int find(ElementWrapper<E> target) {
-        for (int i = 0; i < this.content.size(); i++) if (content.get(i).getData().equals(target.getData())) return i;
-        return -1;
+    @Deprecated
+    public int find(ElementWrapper<E> target) throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("This function is not supported yet!");
     }
 
     /**
@@ -102,7 +91,33 @@ public class Stack<E> {
      * @return {@code true}
      */
     public boolean isEmpty() {
-        return this.content.isEmpty();
+        return this.first instanceof EndElement;
+    }
+
+    /**
+     * Creates a new {@code Iterator} to be able to iterate through all elements.
+     *
+     * @return A new {@code Iterator}
+     */
+    public Iterator<E> iterator() {
+        return new Iterator<>() {
+
+            ElementWrapper<E> wrapper = Stack.this.first;
+
+            @Override
+            public boolean hasNext() {
+                return !(this.wrapper instanceof EndElement);
+            }
+
+            @Override
+            public E next() {
+                if (this.wrapper instanceof EndElement) throw new NoSuchElementException();
+
+                E data = this.wrapper.getData();
+                this.wrapper = this.wrapper.getNext();
+                return data;
+            }
+        };
     }
 
 
