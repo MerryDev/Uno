@@ -1,7 +1,9 @@
 package de.digitaldevs.uno.utils;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.Random;
 
 /**
  * This class represents a generic stack data structure based on the composite design pattern.
@@ -10,7 +12,9 @@ import java.util.NoSuchElementException;
  * @author <a href='https://digitaldevs.de'>DigitalDevs.de</a>
  * @version 1.0.0
  */
-public class Stack<E> {
+public class Stack<E> implements Iterable<E> {
+
+    private static final double SHUFFLE_PROBABILITY = 0.7;
 
     /**
      * The first element of the stack.
@@ -61,9 +65,18 @@ public class Stack<E> {
      *
      * @throws UnsupportedOperationException If this method is called.
      */
-    @Deprecated
-    public void shuffleCards() {
-        throw new UnsupportedOperationException("This functions is not supported yet!");
+    public void shuffle() {
+        System.out.println(this.first.getData());
+        for (int i = 0; i < 500; i++) {
+            Iterator<E> iterator = this.iterator();
+            while (iterator.hasNext()) {
+                boolean shouldShuffle = new Random().nextInt() * SHUFFLE_PROBABILITY >= SHUFFLE_PROBABILITY;
+
+                if (shouldShuffle) {
+                    System.out.println(i);
+                }
+            }
+        }
     }
 
     /**
@@ -99,26 +112,26 @@ public class Stack<E> {
      *
      * @return A new {@code Iterator}
      */
-    public Iterator<E> iterator() {
+    public @NotNull Iterator<E> iterator() {
         return new Iterator<>() {
 
             ElementWrapper<E> wrapper = Stack.this.first;
 
             @Override
             public boolean hasNext() {
-                return !(this.wrapper instanceof EndElement);
+                return !(wrapper instanceof EndElement);
             }
 
             @Override
             public E next() {
-                if (this.wrapper instanceof EndElement) throw new NoSuchElementException();
-
-                E data = this.wrapper.getData();
-                this.wrapper = this.wrapper.getNext();
+                E data = new EndElement<E>().getData();
+                if (!(wrapper instanceof EndElement)) {
+                    data = wrapper.getData();
+                    wrapper = wrapper.getNext();
+                }
                 return data;
             }
         };
     }
-
 
 }
