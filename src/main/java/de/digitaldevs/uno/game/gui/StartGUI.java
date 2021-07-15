@@ -5,15 +5,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 /**
- * Beschreibung
+ * This class represents the main menu when running this program.
  *
  * @author Alexis
- * @version 1.0 vom 15.07.2021
+ * @version 1.0.0
  */
 
-public class Uno_StartGUI extends JFrame {
+public class StartGUI extends JFrame {
 
-    public Uno_StartGUI() {
+    public StartGUI() {
         super();
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         int frameWidth = 800;
@@ -60,7 +60,6 @@ public class Uno_StartGUI extends JFrame {
     }
 
     public void bNewGame_ActionPerformed(ActionEvent evt) {
-
     }
 
 }
